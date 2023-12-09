@@ -5,7 +5,6 @@ void convert(vector<vector<int>>& mat,int i,int j,int n,int m,int value)
     if(j<0 || j==m) return;
     if(i<0 || i==n) return;
     if(mat[i][j]!=value) return;
-
     mat[i][j]=-2;
     convert(mat,i+1,j,n,m,value);
     convert(mat,i-1,j,n,m,value);
@@ -54,7 +53,8 @@ int main(){
         int count=0;
         int current=0;
         sink(mat,px,py,n,m,height,count);
-        cout<<count;
+        if(count==0) cout<<"NONE";
+        else cout<<count;
     }
     //cout<<endl;
     // for(int i=0;i<n;i++)
